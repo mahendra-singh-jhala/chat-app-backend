@@ -14,7 +14,9 @@ require("dotenv").config();
 connectDB();
 
 app.use(bodyparser.json());
-app.use(cors());
+app.use(cors({
+    origin: "https://newly-chat-app.netlify.app"
+}));
 
 // router
 app.use("/api/auth", authRouter)
